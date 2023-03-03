@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+ .weather-data {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.weather-data__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.weather-data__label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.user-searches {
+  margin-top: 30px;
+}
+
+.user-searches__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.user-searches__iata-code {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.user-searches__created-at {
+  color: #666;
+  font-style: italic;
+}

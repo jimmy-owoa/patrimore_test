@@ -1,0 +1,26 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="d-flex justify-content-center">
+      <%= form_with method: :get, id: "search-form" do |form| %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
+                <%= form.label :iata_code, t('activerecord.attributes.user.iata_code'), class: "form-label" %>
+                <%= form.text_field :iata_code, class:"form-control", placeholder: "Ej: SCL", id: "iata-code", pattern: "[A-Za-z]{3}", title: "Ingresa un código IATA válido" %>
+              </div>
+              <div class="col-md-12 text-center pt-2">
+                <%= form.submit "Obtener datos", class:"btn btn-primary", style: "color: white", prevent_default: true %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="weather-data"></div>
+    </div>
+  </div>
+  </div>
+</div>

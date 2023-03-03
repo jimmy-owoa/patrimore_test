@@ -1,12 +1,45 @@
-<p>Nombre: <%= weather_data["location"]["name"] %></p>
-<p>Temperatura: <%= weather_data["current"]["temp_c"] %>°C</p>
-<p>Latitud: <%= weather_data["location"]["lat"] %></p>
-<p>Longitud: <%= weather_data["location"]["lon"] %></p>
-
-------------------
-Últimas búsquedas:
-------------------
-<% user_searches.each do |search| %>
-  <p><%= search.iata_code %> - <%= search.created_at %></p>
+<% if !weather_data.present? %>
+  <div class="alert alert-warning" role="alert">
+    El código IATA ingresado no es válido: <strong><%= iata_code %></strong>.
+  </div>
+<% else %>
+  <h2>Resultados de la búsqueda:</h2>
+  <table class="table">
+    <tr>
+      <td>Nombre:</td>
+      <td><%= weather_data["location"]["name"] %></td>
+    </tr>
+    <tr>
+      <td>Temperatura:</td>
+      <td><%= weather_data["current"]["temp_c"] %>°C / <%= weather_data["current"]["temp_f"] %>°F</td>
+    </tr>
+    <tr>
+      <td>Latitud:</td>
+      <td><%= weather_data["location"]["lat"] %></td>
+    </tr>
+    <tr>
+      <td>Longitud:</td>
+      <td><%= weather_data["location"]["lon"] %></td>
+    </tr>
+  </table>
+  <hr />
+  <div class="user-searches">
+    <h2>Últimas búsquedas:</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Código IATA</th>
+          <th scope="col">Fecha y hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% user_searches.each do |search| %>
+          <tr>
+            <td><%= search.iata_code %></td>
+            <td><%= search.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>
-

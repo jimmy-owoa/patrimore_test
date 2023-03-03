@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :user do
     get '/weather', to: 'weather#show'
-    root "home#index"
+    root "weather#index"
   end
 
   devise_scope :user do
