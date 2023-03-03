@@ -3,3 +3,10 @@
 <p>Latiud: <%= weather_data["location"]["lat"] %></p>
 <p>Longitud: <%= weather_data["location"]["lon"] %></p>
 
+------------------
+Últimas búsquedas:
+------------------
+<% user_searches.each do |search| %>
+  <p><%= search.iata_code %> - <%= search.created_at %></p>
+<% end %>
+
