@@ -56,6 +56,8 @@ group :development, :test do
   gem "pry"
   # Use letter_opener to preview emails in the browser
   gem "letter_opener_web"
+  # Use RSpec for testing
+  gem "rspec-rails"
 end
 
 group :development do

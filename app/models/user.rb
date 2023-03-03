@@ -4,4 +4,6 @@ class User < ApplicationRecord
          :confirmable, :trackable
 
   has_many :user_searches, dependent: :destroy
+
+  validates :name, presence: true
 end

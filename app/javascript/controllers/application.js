@@ -9,7 +9,6 @@ window.Stimulus   = application
 
 
 $('#search-form').on('submit', function(e) {
-  console.log('submitting')
   e.preventDefault();
   var iata_code = $('#iata-code').val();
   $.ajax({
